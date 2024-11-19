@@ -20,4 +20,9 @@ node server.js
 ~~~
 http://localhost:3000/
 ~~~
+Debera ver una vista como la siguente: 
+
+![image](https://github.com/user-attachments/assets/be786034-5d49-4eec-922b-3136b4aa4451)
+
+Y ya solo queda realizar preguntas al bot
 
