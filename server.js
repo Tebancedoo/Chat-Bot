@@ -1,7 +1,9 @@
-process.env["NODE_TLS_REJECT_UNAUTHORIZED"]=0;
 const express = require('express');
 const path = require('path');
 const { OpenAIAPI } = require('./openai');
+
+// Comment out the line that disables TLS verification
+// process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0; // REMOVE THIS FOR PRODUCTION
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -22,6 +24,7 @@ app.post('/getChatbotResponse', async (req, res) => {
     // Send the response back to the client
     res.json({ chatbotResponse });
 });
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });

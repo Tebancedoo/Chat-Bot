@@ -1,5 +1,6 @@
 const chatLog = document.getElementById('chat-log');
 const userInput = document.getElementById('user-input');
+
 function sendMessage() {
     const message = userInput.value;
     // Display user's message
@@ -9,6 +10,7 @@ function sendMessage() {
     // Clear user input
     userInput.value = '';
 }
+
 function displayMessage(sender, message) {
     const messageElement = document.createElement('div');
     messageElement.classList.add('message', sender);
@@ -19,6 +21,7 @@ function displayMessage(sender, message) {
     messageElement.appendChild(messageParagraph);
     chatLog.appendChild(messageElement);
 }
+
 function getChatbotResponse(userMessage) {
     // Make a request to your server with the user's message
     fetch('/getChatbotResponse', {
@@ -33,5 +36,8 @@ function getChatbotResponse(userMessage) {
         // Display chatbot's response
         displayMessage('chatbot', data.chatbotResponse);
     })
-    .catch(error => console.error('Error:', error));
+    .catch(error => {
+        console.error('Error:', error);
+        displayMessage('chatbot', 'Sorry, there was an error with the request.');
+    });
 }
