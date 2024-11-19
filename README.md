@@ -26,3 +26,5 @@ Debera ver una vista como la siguente:
 
 Y ya solo queda realizar preguntas al bot
 
+
+**Aclaración: La API de OpenAI, funciona con un modelo de pago por uso, por lo mismo toca crear un .env con la clave de la api**
